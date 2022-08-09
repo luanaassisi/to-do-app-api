@@ -6,9 +6,10 @@ app.use(express.json());
 
 import { tarefaController } from "./controller/TarefaController.js";
 import { usuarioController } from "./controller/UsuarioController.js";
+import db from "./infra/sqlite-db.js";
 
 
-tarefaController(app);
+tarefaController(app, db);
 usuarioController(app);
 
 app.listen(4000, () => {
